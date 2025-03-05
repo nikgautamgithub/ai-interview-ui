@@ -1,15 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { MediaControls } from "@/utils/hooks/useMediaControls";
 import QuestionsTab from "@/components/room/tabs/QuestionTab";
 import ResumeTab from "@/components/room/tabs/ResumeTab";
 import JobDescriptionTab from "@/components/room/tabs/JobDescriptionTab";
 
-interface TabsContentProps {
-  mediaControls: MediaControls;
-}
-
-const TabsContent = ({ mediaControls }: TabsContentProps) => {
+const TabsContent = () => {
   const [activeTab, setActiveTab] = useState<"questions" | "resume" | "job">(
     "questions"
   );

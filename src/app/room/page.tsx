@@ -18,12 +18,12 @@ const Room = () => {
         <div className="grid grid-cols-2 gap-4 mb-6">
           <AgentCard />
 
-          <UserCard mediaControls={mediaControls}/>
+          <UserCard mediaControls={mediaControls} />
         </div>
 
-        <ControlBar mediaControls={mediaControls} totalDuration={1800}/>
+        <ControlBar mediaControls={mediaControls} totalDuration={1800} />
 
-        <TabsContent mediaControls={mediaControls} />
+        <TabsContent />
       </div>
     </div>
   );

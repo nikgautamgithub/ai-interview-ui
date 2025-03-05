@@ -108,11 +108,15 @@ const useMediaControls = (): MediaControls => {
   }, [stream]);
 
   // 4. Update audio output (speaker) if supported
+  // TODO: Give correct type...
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (videoRef.current && (videoRef.current as any).setSinkId) {
       if (selectedSpeaker) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (videoRef.current as any)
           .setSinkId(selectedSpeaker)
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           .catch((err: any) =>
             console.error("Error setting speaker sinkId:", err)
           );
@@ -143,6 +147,7 @@ const useMediaControls = (): MediaControls => {
       }
       startCamera();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cameraOff]);
 
   // For speaker, adjust the volume of the video element
